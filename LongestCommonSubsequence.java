@@ -13,7 +13,12 @@ public class LCS {
 		 lookUp = new int[Math.max(A.length(),B.length())];        // create and initialize array
 	       for (int i=0; i<Math.max(A.length(),B.length()); i++)        
 	    	      lookUp[i] =Integer.MAX_VALUE;
-		System.out.println(longestCommonSubsequence(A,B));
+		
+	       System.out.println("1 longestCommonSubsequence="+longestCommonSubsequence(A,B));
+	        System.out.println("  countRecursive="+countRecursive);
+	        
+	        System.out.println("2 longestCommonSubsequence="+longestCommonSubsequence(A,B));
+	        System.out.println("  countMemoized="+countMemoized);
 	}
 		
 	
@@ -38,6 +43,7 @@ public class LCS {
     
     public static int [][] helper(String A,String B, int i,int j, int [] [] f)
     {
+    	countRecursive++;
     	  f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
           if(A.charAt(i - 1) == B.charAt(j - 1))
               f[i][j] = f[i - 1][j - 1] + 1;
@@ -45,3 +51,9 @@ public class LCS {
     }
 }
 
+/*
+ 1 longestCommonSubsequence=4
+  countRecursive=20
+2 longestCommonSubsequence=4
+  countMemoized=0
+  */
