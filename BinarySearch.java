@@ -1,10 +1,11 @@
-    int[] data;
-    int size;
+public class BinarySearch {
 
-    public boolean binarySearch(int key) 
+	 
+
+    public static boolean binarySearch(int key, int [] data) 
     {
          int low = 0;
-         int high = size - 1;
+         int high = data.length - 1;
           
          while(high >= low) {
              int middle = (low + high) / 2;
@@ -20,3 +21,12 @@
        }
         return false;
   }
+    
+    public static void main(String []args)
+    {
+    	int [] data={1,2,3,4};
+    	System.out.println(binarySearch(3,data));
+    }
+	
+}
+
