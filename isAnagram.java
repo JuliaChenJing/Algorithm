@@ -4,8 +4,15 @@ import java.util.Map;
 public class Anagram {
 
 	public static boolean isAnagram(String s1, String s2) {
+		
 		if (s1 == s2)
 			return true;
+		
+		if(s1==null &&s2!=null)
+			return false;
+		
+		if(s1!=null &&s2==null)
+			return false;
 
 		if (s1 != null &&s2!=null  && s1.length() != s2.length())
 			return false;
@@ -48,14 +55,22 @@ public class Anagram {
 
 	public static void main(String[] args) {
 
+		System.out.println("apple"=="apple");
+		System.out.println("apple"=="appbe");
+		System.out.println(null=="apple");
+		System.out.println(null==null);
+		System.out.println(null=="");
+		System.out.println(""=="");
+		
 		System.out.println(isAnagram("apple", "apple"));
 		System.out.println(isAnagram("apble", "apple"));
 		System.out.println(isAnagram("aaabbb", "ab"));
 		System.out.println(isAnagram("aaabbb", "abaaa"));
 		System.out.println(isAnagram("", ""));
 		System.out.println(isAnagram(null, null));
-	//	System.out.println(isAnagram(null, ""));
-	//	System.out.println(isAnagram(null, "ab"));
+		System.out.println(isAnagram(null, ""));
+		System.out.println(isAnagram(null, "ab"));
+		
 
 	}
 
@@ -65,8 +80,15 @@ public class Anagram {
 true
 false
 false
+true
 false
 true
 true
-
+false
+false
+false
+true
+true
+false
+false
  */
