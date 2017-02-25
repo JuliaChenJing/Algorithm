@@ -6,6 +6,8 @@ public class removeDuplicatesFromLinkedList {
 	//If we can use a buffer, we can keep track of elements in a hashtable and remove any dups
 		public static void deleteDups(Node head)
 		{
+			if (head==null)
+				return;
 			Hashtable <Integer, Boolean> table = new Hashtable<Integer, Boolean>();
 			Node n=head;
 			Node previous = null;//保存处理中的当前位置，下一个位置可以放入下一个不重复的数字
