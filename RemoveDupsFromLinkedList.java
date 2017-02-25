@@ -3,21 +3,23 @@ import java.util.LinkedList;
 
 public class removeDuplicatesFromLinkedList {
 
-	//If we can use a buffer, we can keep track of elements in a hashtable and remove any dups:
+	//If we can use a buffer, we can keep track of elements in a hashtable and remove any dups
 		public static void deleteDups(Node head)
 		{
-			Hashtable table = new Hashtable();
+			Hashtable <Integer, Boolean> table = new Hashtable<Integer, Boolean>();
 			Node n=head;
-			Node re = null;
+			Node previous = null;//保存处理中的当前位置，下一个位置可以放入下一个不重复的数字
 			while (n != null) {
 		
-				if (table.containsKey(n.data))
-					re.next = n.next;
-		 
-				else 
+				if (!table.containsKey(n.data))//如果节点的值不在表中
 				{
-					table.put(n.data, true);
-					re = n;
+					table.put(n.data, true);//数值放入表中
+					previous = n;//？
+				}
+		 
+				else //如果节点的值在表中
+				{
+					previous.next = n.next;//？
 				}
 		 
 				n = n.next;
