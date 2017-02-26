@@ -7,14 +7,23 @@ public class AddTwoNumbers {
 
 		Node head = null;
 
+		int carry=0;
+		int sum=0;
+		
 		if (head1 != null && head2 != null) {
 
-			head = new Node((a.data + b.data)%10);
+			sum=a.data + b.data;
+			carry=sum/10;
+			head = new Node(sum%10);
 			Node n = head;
+			sum=0;
+			
 			while (a.next != null && b.next != null) {
 				a = a.next;
 				b = b.next;
-				n.next = new Node((a.data + b.data)%10);
+				sum=a.data + b.data+carry;
+				carry=sum/10;;
+				n.next = new Node(sum%10);
 				n = n.next;
 			}
 			return head;
@@ -105,5 +114,6 @@ THE SECEND LINKED LIST:
 THE RESULT LINKED LIST: 
 8--->
 0--->
-7--->
+8--->
+
  */
