@@ -6,9 +6,9 @@ public class DeleteNode {
 			 return false; // Failure
 		 }
 		
-		 Node next = node.next;
-		 node.data = next.data;
-		 node.next = next.next;
+		 Node next = node.next;//把第四个节点保存在next里
+		 node.data = next.data;//把第四个节点的数据保存在第三个node里
+		 node.next = next.next;//把下一个节点设成第四个节点
 		 return true;
 		 
 	}
