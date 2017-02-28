@@ -16,7 +16,11 @@ public class SetOfStacks {
 
 		return stacks.get(stacks.size() - 1);
 	}
-
+/*
+ * We know that push() should behave identically to a single stack, which means that we need
+push() to call push on the last stack. We have to be a bit careful here though: if the last stack
+is at capacity, we need to create a new stack. Our code should look something like this:
+ */
 	public void push(int v) {
 		Stack last = getLastStack();
 		if (last != null && !last.isAtCapacity()) { // add to last stack
@@ -27,7 +31,11 @@ public class SetOfStacks {
 			stacks.add(stack);
 		}
 	}
-
+/*
+ * What should pop() do? It should behave similarly to push(), in that it should operate on the
+last stack. If the last stack is empty (after popping), then we should remove it from the list
+of stacks
+ */
 	public int pop() {
 
 		Stack last = getLastStack();
@@ -46,7 +54,8 @@ public class SetOfStacks {
 		return leftShift(index, true);
 	}
 
-	public int leftShift(int index, boolean removeTop) {
+	public int leftShift(int index, boolean removeTop)
+	{
 		Stack stack = stacks.get(index);
 		int removed_item;
 		if (removeTop)
@@ -64,6 +73,7 @@ public class SetOfStacks {
 }
 
 class Stack {
+	
 	private int capacity;
 	public Node top, bottom;
 	public int size = 0;
@@ -77,17 +87,21 @@ class Stack {
 	}
 
 	public void join(Node above, Node below) {
+		
 		if (below != null)
 			below.above = above;
+		
 		if (above != null)
 			above.below = below;
 	}
 
 	public boolean push(int v) {
+		
 		if (size >= capacity)
 			return false;
 		size++;
 		Node n = new Node(v);
+		
 		if (size == 1)
 			bottom = n;
 		join(n, top);
