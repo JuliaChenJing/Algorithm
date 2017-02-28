@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class SetOfStacks {
 	
 	ArrayList<Stack> stacks = new ArrayList<Stack>();
@@ -11,7 +13,7 @@ public class SetOfStacks {
  
 		if (stacks.size() == 0) return null;
 
-		return stacks.get(stacks.size() ‐ 1);
+		return stacks.get(stacks.size() - 1);
  }
 
 	public void push(int v) {
@@ -27,7 +29,7 @@ public class SetOfStacks {
 		int v = last.pop();
 
 		if (last.size == 0)
-			stacks.remove(stacks.size() ‐ 1);
+			stacks.remove(stacks.size() - 1);
  
 		return v;
  }
@@ -92,7 +94,7 @@ class Stack {
  
 		top = top.below;
  
-		size‐‐;
+		size--;
  
 		return t.value;
  }
@@ -110,9 +112,19 @@ class Stack {
  
 		if (bottom != null) bottom.below = null;
  
-		size‐‐;
+		size--;
 
 		return b.value;
 
+	}
+}
+
+class Node{
+	Node below=null;
+	Node above=null;
+	int value;
+	public Node(int d)
+	{
+		value=d;
 	}
 }
