@@ -53,3 +53,37 @@ public class Tower {
 		}
 	}
 }
+
+/*
+Move disk 0 from 0to 2
+Move disk 1 from 0to 1
+Move disk 0 from 2to 1
+Move disk 2 from 0to 2
+Move disk 0 from 1to 0
+Move disk 1 from 1to 2
+Move disk 0 from 0to 2
+Move disk 3 from 0to 1
+Move disk 0 from 2to 1
+Move disk 1 from 2to 0
+Move disk 0 from 1to 0
+Move disk 2 from 2to 1
+Move disk 0 from 0to 2
+Move disk 1 from 0to 1
+Move disk 0 from 2to 1
+Move disk 4 from 0to 2
+Move disk 0 from 1to 0
+Move disk 1 from 1to 2
+Move disk 0 from 0to 2
+Move disk 2 from 1to 0
+Move disk 0 from 2to 1
+Move disk 1 from 2to 0
+Move disk 0 from 1to 0
+Move disk 3 from 1to 2
+Move disk 0 from 0to 2
+Move disk 1 from 0to 1
+Move disk 0 from 2to 1
+Move disk 2 from 0to 2
+Move disk 0 from 1to 0
+Move disk 1 from 1to 2
+Move disk 0 from 0to 2
+*/
