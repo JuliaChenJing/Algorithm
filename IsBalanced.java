@@ -26,7 +26,9 @@ public class IsBalanced {
 		root.right=new TreeNode(3);
 		root.right.right=new TreeNode(5);
 		root.right.right.right=new TreeNode(7);
-		System.out.println(isBalanced(root));
+		System.out.println("Is it a balanced tree? "+isBalanced(root));
+		System.out.println("The height of the tree is : "+maxDepth(root));
+		
 	}
 }
 
@@ -41,5 +43,6 @@ class TreeNode {
 	int value;
 }
 /*
-false
+Is it a balanced tree? false
+The height of the tree is : 4
 */
